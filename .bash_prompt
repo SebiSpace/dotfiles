@@ -1,0 +1,13 @@
+bold="$(tput bold)";
+black="\e[0;30m";
+gray="\e[1;30m";
+red="\e[1;31m";
+green="\e[1;32m";
+yellow="\e[1;33m";
+blue="\e[0;34m";
+purple="\e[0;35m";
+white="\e[1;37m";
+reset="\e[0m";
+
+export PS1="\[${bold}\]\[${red}\]\u \[${white}\]at \[${bold}\]\[${purple}\]\h \[${white}\]in \[${blue}\]\w\n\[${bold}\]\[${white}\]$ \[${reset}\]";
+#export PS1="\[${bold}\]\[${blue}\]\w \[${reset}\]\[${red}\]\u\n\[${reset}\]\[${bold}\]$ \[${reset}\]";
