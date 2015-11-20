@@ -14,8 +14,16 @@ command -v clang >/dev/null 2>&1 || { echo "Command line tools aren't installed"
 # Installing brew if not
 command -v brew >/dev/null 2>&1 || { ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
-defaults write com.apple.finder QLEnableTextSelection -bool true && killall Finder
+printf $BLUE "Installing brew tools and cask apps"
+
+/bin/bash ./brew.sh
+
+# Making Google Chrome default browser
 open -a "Google Chrome" --args --make-default-browser
+
+# Making bash 4 default shell
+echo "/usr/local/bin/bash" >> /etc/shells
+chsh -s /usr/local/bin/bash
 
 # Manual app installation
 printf $BLUE "Download and install following applications (⌘ + Double Click)"
@@ -27,12 +35,13 @@ done
 
 read -p "Press Enter when you are done"
 
+
 printf $BLUE "Copying dotfiles"
 
 # Copy dotfiles to home directory
-read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	rync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "README.md" -avh --no-perms . ~;
+	rync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "brew.sh" --exclude "README.md" -avh --no-perms . ~;
 	source ~/.bash_profile;
 fi

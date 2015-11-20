@@ -38,7 +38,6 @@ brew install python3
 
 # Install other useful binaries
 brew install brew-cask
-brew install dark-mode
 brew install ffmpeg
 brew install git
 brew install htop-osx
@@ -49,6 +48,7 @@ brew install ssh-copy-id
 brew install tree
 brew install youtube-dl
 brew install z
+brew install pass
 
 # Install cask binaries
 brew tap caskroom/versions

@@ -10,4 +10,3 @@ white="\e[1;37m";
 reset="\e[0m";
 
 export PS1="\[${bold}\]\[${red}\]\u \[${white}\]at \[${bold}\]\[${purple}\]\h \[${white}\]in \[${blue}\]\w\n\[${bold}\]\[${white}\]$ \[${reset}\]";
-#export PS1="\[${bold}\]\[${blue}\]\w \[${reset}\]\[${red}\]\u\n\[${reset}\]\[${bold}\]$ \[${reset}\]";

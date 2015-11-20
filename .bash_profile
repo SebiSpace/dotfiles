@@ -1,6 +1,6 @@
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other setting you don't want to commit
-for file in ~/{bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/{.bash_prompt,.exports,.aliases,.functions,.extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -23,3 +23,5 @@ if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_c
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
+
+source $(brew --prefix)/etc/profile.d/z.sh
