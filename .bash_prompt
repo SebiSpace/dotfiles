@@ -9,4 +9,4 @@ purple="\e[0;35m";
 white="\e[1;37m";
 reset="\e[0m";
 
-export PS1="\[${bold}\]\[${red}\]\u \[${white}\]at \[${bold}\]\[${purple}\]\h \[${white}\]in \[${blue}\]\w\n\[${bold}\]\[${white}\]$ \[${reset}\]";
+export PS1="\[${bold}\]\[${red}\]\u \[${white}\]at \[${bold}\]\[${green}\]\h \[${white}\]in \[${bold}\]\[${blue}\]\w\n\[${bold}\]\[${white}\]$ \[${reset}\]";
