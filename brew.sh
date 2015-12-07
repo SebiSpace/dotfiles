@@ -49,6 +49,7 @@ brew install tree
 brew install youtube-dl
 brew install z
 brew install pass
+brew install tmux
 
 # Install cask binaries
 brew tap caskroom/versions
