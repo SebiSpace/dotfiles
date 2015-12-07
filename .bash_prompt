@@ -1,12 +1,24 @@
-bold="$(tput bold)";
-black="\e[0;30m";
-gray="\e[1;30m";
-red="\e[1;31m";
-green="\e[1;32m";
-yellow="\e[1;33m";
-blue="\e[0;34m";
-purple="\e[0;35m";
-white="\e[1;37m";
-reset="\e[0m";
+# Reset
+reset='\e[0m'
 
-export PS1="\[${bold}\]\[${red}\]\u \[${white}\]at \[${bold}\]\[${green}\]\h \[${white}\]in \[${bold}\]\[${blue}\]\w\n\[${bold}\]\[${white}\]$ \[${reset}\]";
+# Regular Colors
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+
+# Bold Colors
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+
+export PS1="\[${BRed}\]\u \[${BWhite}\]at \[${BGreen}\]\h \[${BWhite}\]in \[${BBlue}\]\w\n\[${BWhite}\]$ \[${reset}\]";
