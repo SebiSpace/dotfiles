@@ -24,4 +24,6 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
-source $(brew --prefix)/etc/profile.d/z.sh
+if [[ "`uname`" == "Darwin" ]]; then
+    source $(brew --prefix)/etc/profile.d/z.sh
+fi
