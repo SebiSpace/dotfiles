@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [[ "`uname`" == "Darwin" ]]; then
-    BLUE="\e[1;34m%-6s\e[m\n"
+BLUE="\e[1;34m%-6s\e[m\n"
 
+if [[ "`uname`" == "Darwin" ]]; then
     APPS=( "http://www.macbartender.com/" "http://www.sublimetext.com/3" "https://www.wireshark.org/download.html" "https://filezilla-project.org/download.php?type=client" )
 
     # Installing command line tools
@@ -44,7 +44,6 @@ if [[ "`uname`" == "Darwin" ]]; then
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
     	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "brew.sh" --exclude "README.md" -avh --no-perms . ~;
-    	source ~/.bash_profile;
     fi
 else
     # Copy dotfiles to home directory
@@ -52,6 +51,6 @@ else
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "brew.sh" --exclude "README.md" --exclude ".hushlogin" -avh --no-perms . ~;
-        source ~/.bash_profile;
     fi
 fi
+printf $BLUE "Please run 'source ~/.bash_profile'"
