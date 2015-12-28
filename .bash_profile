@@ -18,7 +18,7 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
-if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+if "`uname`" == "Darwin" && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
 	source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
