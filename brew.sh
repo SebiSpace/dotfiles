@@ -50,6 +50,7 @@ brew install youtube-dl
 brew install z
 brew install pass
 brew install tmux
+brew install reattach-to-user-namespace
 
 # Install cask binaries
 brew tap caskroom/versions
