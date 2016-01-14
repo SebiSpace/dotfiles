@@ -1,0 +1,45 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/versions'
+tap 'caskroom/versions'
+
+brew 'coreutiles'
+brew 'findutils'
+
+brew 'bash'
+brew 'bash-completion2'
+
+brew 'wget', args: ['with-iri']
+
+brew 'python'
+brew 'python3'
+
+brew 'openssl'
+brew 'ffmpeg'
+brew 'git'
+brew 'htop-osx'
+brew 'nmap'
+brew 'node'
+brew 'sqlite'
+brew 'ssh-copy-id'
+brew 'tree'
+brew 'youtube-dl'
+brew 'z'
+brew 'pass'
+brew 'tmux'
+brew 'reattach-to-user-namespace'
+
+cask 'dropbox'
+cask 'google-chrome'
+cask 'iterm2-beta'
+cask 'appcleaner'
+cask 'spotify'
+cask 'virtualbox'
+cask 'virtualbox-extension-pack'
+cask 'wireshark'
+cask 'qlcolorcode'
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'quicklook-csv'
+cask 'suspicious-package'

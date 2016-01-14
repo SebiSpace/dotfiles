@@ -16,8 +16,9 @@ if [[ "`uname`" == "Darwin" ]]; then
     command -v brew >/dev/null 2>&1 || { ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
     printf $BLUE "Installing brew tools and cask apps"
-
-    /bin/bash ./brew.sh
+    
+    brew tap homebrew/bundle
+    brew bundle
 
     # Making Google Chrome default browser
     open -a "Google Chrome" --args --make-default-browser
