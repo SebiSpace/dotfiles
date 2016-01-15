@@ -3,6 +3,9 @@
 BLUE="\e[1;34m%-6s\e[m\n"
 
 if [[ "`uname`" == "Darwin" ]]; then
+    sudo -v
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
     APPS=( "http://www.macbartender.com/" "http://www.sublimetext.com/3" "https://www.wireshark.org/download.html" "https://filezilla-project.org/download.php?type=client" )
 
     # Installing command line tools
@@ -16,7 +19,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     command -v brew >/dev/null 2>&1 || { ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
     printf $BLUE "Installing brew tools and cask apps"
-    
+
     brew tap homebrew/bundle
     brew bundle
 
@@ -24,7 +27,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     open -a "Google Chrome" --args --make-default-browser
 
     # Making bash 4 default shell
-    echo "/usr/local/bin/bash" >> /etc/shells
+    echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
     chsh -s /usr/local/bin/bash
 
     # Manual app installation
