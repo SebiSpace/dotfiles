@@ -3,7 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/versions'
 tap 'caskroom/versions'
 
-brew 'coreutiles'
+brew 'coreutils'
 brew 'findutils'
 
 brew 'bash'
@@ -43,3 +43,4 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'suspicious-package'
+cask 'hyperdock'
