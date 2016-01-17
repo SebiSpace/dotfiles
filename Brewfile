@@ -27,7 +27,7 @@ brew 'youtube-dl'
 brew 'z'
 brew 'pass'
 brew 'tmux'
-brew 'reattach-to-user-namespace'
+brew 'reattach-to-user-namespace', args: ['with-wrap-pbcopy-and-pbpaste']
 
 cask 'dropbox'
 cask 'google-chrome'
