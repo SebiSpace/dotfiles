@@ -10,6 +10,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias g="git"
 alias c="clear"
+alias claer="clear" # cause i'm dumb
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" -x --audio-format mp3 --audio-quality 320K'
 alias speedtest='wget -O /dev/null http://speedtest.sea01.softlayer.com/downloads/test100.zip'
