@@ -1,5 +1,7 @@
+BLUE="\e[1;34m%-6s\e[m\n"
+
 # Simple calculator
-function calc() {
+function calc {
 	local result="";
 	result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
 	#                       └─ default (when `--mathlib` is used) is 20
@@ -17,7 +19,7 @@ function calc() {
 }
 
 # Create a new directory and enter it
-function mkd() {
+function mkd {
 	mkdir -p "$@" && cd "$_";
 }
 
@@ -27,7 +29,7 @@ function cdf() { # short for `cdfinder`
 }
 
 # Determine size of a file or total size of a directory
-function fs() {
+function fs {
 	if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh;
 	else
@@ -38,4 +40,22 @@ function fs() {
 	else
 		du $arg .[^.]* *;
 	fi;
+}
+
+function update {
+	if [[ "`uname`" == "Darwin" ]]; then
+		printf $BLUE "Updating system"
+		sudo softwareupdate -i -a
+
+		printf $BLUE "Updating brew"
+		brew update
+		brew upgrade
+		brew cleanup
+
+		printf $BLUE "Updating npm"
+		npm install -g npm
+		npm update -g
+	else
+		printf $BLUE "Update script only available on OS X"
+	fi
 }
