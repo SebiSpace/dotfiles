@@ -1,7 +1,7 @@
 BLUE="\e[1;34m%-6s\e[m\n"
 
 # Simple calculator
-function calc {
+calc() {
 	local result="";
 	result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
 	#                       └─ default (when `--mathlib` is used) is 20
@@ -19,17 +19,17 @@ function calc {
 }
 
 # Create a new directory and enter it
-function mkd {
+mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
 # Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
+cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
 # Determine size of a file or total size of a directory
-function fs {
+fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh;
 	else
@@ -42,7 +42,7 @@ function fs {
 	fi;
 }
 
-function update {
+update() {
 	if [[ "`uname`" == "Darwin" ]]; then
 		printf $BLUE "Updating system"
 		sudo softwareupdate -i -a
@@ -58,4 +58,8 @@ function update {
 	else
 		printf $BLUE "Update script only available on OS X"
 	fi
+}
+
+genpasswd() {
+	pwgen -Bs $1 1 | pbcopy | pbpaste; echo "Has been copied to clipboard"
 }
