@@ -63,3 +63,7 @@ update() {
 genpasswd() {
 	pwgen -Bs $1 1 | pbcopy | pbpaste; echo "Has been copied to clipboard"
 }
+
+quitall() {
+	kill $(osascript -e 'tell app "System Events" to unix id of processes where background only is false'|tr -d ,)
+}
