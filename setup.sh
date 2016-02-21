@@ -30,6 +30,9 @@ if [[ "`uname`" == "Darwin" ]]; then
     echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
     chsh -s /usr/local/bin/bash
 
+    # Installing RVM
+    curl -L get.rvm.io | bash -s stable
+
     # Manual app installation
     printf $BLUE "Download and install following applications (⌘ + Double Click)"
 
