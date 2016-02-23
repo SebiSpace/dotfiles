@@ -30,7 +30,7 @@ brew 'tmux'
 brew 'reattach-to-user-namespace', args: ['with-wrap-pbcopy-and-pbpaste']
 
 cask 'dropbox'
-cask 'google-chrome'
+cask 'google-chrome-canary'
 cask 'iterm2-beta'
 cask 'appcleaner'
 cask 'spotify'
