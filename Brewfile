@@ -28,6 +28,7 @@ brew 'z'
 brew 'pass'
 brew 'tmux'
 brew 'reattach-to-user-namespace', args: ['with-wrap-pbcopy-and-pbpaste']
+brew 'argon/mas/mas'
 
 cask 'dropbox'
 cask 'google-chrome-canary'

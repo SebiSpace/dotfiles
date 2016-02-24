@@ -47,6 +47,9 @@ update() {
 		printf $BLUE "Updating system"
 		sudo softwareupdate -i -a
 
+		printf $BLUE "Updating Mac App Store Applications"
+		mas upgrade
+
 		printf $BLUE "Updating brew"
 		brew update
 		brew upgrade
