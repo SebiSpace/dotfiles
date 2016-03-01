@@ -6,8 +6,6 @@ if [[ "`uname`" == "Darwin" ]]; then
     sudo -v
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-    APPS=( "http://www.macbartender.com/" "http://www.sublimetext.com/3" "https://www.wireshark.org/download.html" "https://filezilla-project.org/download.php?type=client" )
-
     # Installing command line tools
     xcode-select --install
     read -p "Press Enter when either the command line tools or Xcode are installed"
@@ -33,16 +31,17 @@ if [[ "`uname`" == "Darwin" ]]; then
     # Installing RVM
     curl -L get.rvm.io | bash -s stable
 
-    # Manual app installation
-    printf $BLUE "Download and install following applications (⌘ + Double Click)"
+    # App Store Applications installation
 
-    for app in "${APPS[@]}"
-    do
-    	echo $app
+    apps = ("497799835" "948415170" "409183694" "890031187" "409201541" "557168941" "937984704" "409203825")
+
+    for app in "${apps[@]}"; do
+        if [[ $(mas list | grep "$app") ]]; then
+		    echo "App $app already installed."
+    	else
+    		mas install "$app"
+    	fi
     done
-
-    read -p "Press Enter when you are done"
-
 
     printf $BLUE "Copying dotfiles"
 
@@ -50,14 +49,14 @@ if [[ "`uname`" == "Darwin" ]]; then
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-    	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "brew.sh" --exclude "README.md" -avh --no-perms . ~;
+    	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "README.md" --exclude "Brewfile" -avh --no-perms . ~;
     fi
 else
     # Copy dotfiles to home directory
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "brew.sh" --exclude "README.md" --exclude ".hushlogin" --exclude "Brewfile" -avh --no-perms . ~;
+        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" -avh --no-perms . ~;
     fi
 fi
 printf $BLUE "Please run 'source ~/.bash_profile'"
