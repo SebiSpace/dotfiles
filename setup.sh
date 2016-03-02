@@ -18,11 +18,7 @@ if [[ "`uname`" == "Darwin" ]]; then
 
     printf $BLUE "Installing brew tools and cask apps"
 
-    brew tap homebrew/bundle
     brew bundle
-
-    # Making Google Chrome default browser
-    open -a "Google Chrome" --args --make-default-browser
 
     # Making bash 4 default shell
     echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
@@ -59,4 +55,5 @@ else
         rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" -avh --no-perms . ~;
     fi
 fi
+
 printf $BLUE "Please run 'source ~/.bash_profile'"
