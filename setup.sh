@@ -21,7 +21,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     brew bundle
 
     # Making bash 4 default shell
-    echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+    sudo python -c 'if not "/usr/local/bin/zsh" in open("/etc/shells").read(): open("/etc/shells", "a").write("/usr/local/bin/zsh\n")'
     chsh -s /usr/local/bin/bash
 
     # Installing RVM
@@ -37,6 +37,14 @@ if [[ "`uname`" == "Darwin" ]]; then
     	else
     		mas install "$app"
     	fi
+    done
+
+    # installing node modules
+
+    modules = ("bower" "babel-cli" "nodemon" "yo" "gulp" "jade" "express-generator")
+
+    for module in "${modules[@]}"; do
+        npm install -g "$module"
     done
 
     printf $BLUE "Copying dotfiles"
