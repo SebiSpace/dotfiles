@@ -24,8 +24,11 @@ if [[ "`uname`" == "Darwin" ]]; then
     sudo python -c 'if not "/usr/local/bin/zsh" in open("/etc/shells").read(): open("/etc/shells", "a").write("/usr/local/bin/zsh\n")'
     chsh -s /usr/local/bin/bash
 
-    # Installing RVM
+    # Installing RVM, ruby 2.2 and gems
     curl -L get.rvm.io | bash -s stable
+    rvm install 2.2
+    gem install sass
+    gem install iStats
 
     # App Store Applications installation
 
