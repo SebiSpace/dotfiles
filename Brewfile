@@ -29,7 +29,6 @@ brew 'argon/mas/mas'
 brew 'screenfetch'
 brew 'wakeonlan'
 
-cask 'dropbox'
 cask 'google-chrome-canary'
 cask 'iterm2-beta'
 cask 'appcleaner'
