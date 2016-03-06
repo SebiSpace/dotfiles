@@ -9,7 +9,6 @@ if [[ "`uname`" == "Darwin" ]]; then
     # Installing command line tools
     xcode-select --install
     read -p "Press Enter when either the command line tools or Xcode are installed"
-
     # Making shure that the command line tools or Xcode are installed
     command -v clang >/dev/null 2>&1 || { echo "Command line tools aren't installed"; exit 1; }
 
@@ -56,14 +55,14 @@ if [[ "`uname`" == "Darwin" ]]; then
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-    	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "README.md" --exclude "Brewfile" -avh --no-perms . ~;
+    	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "README.md" --exclude "Brewfile" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
     fi
 else
     # Copy dotfiles to home directory
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" -avh --no-perms . ~;
+        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
     fi
 fi
 
