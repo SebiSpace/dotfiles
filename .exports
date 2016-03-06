@@ -9,4 +9,4 @@ export LC_ALL='en_US.UTF-8';
 export GREP_OPTIONS='--color=auto';
 
 # Add ~/bin to Path for custom code
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:$HOME/.rvm/bin

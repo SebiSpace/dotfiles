@@ -20,18 +20,22 @@ if [[ "`uname`" == "Darwin" ]]; then
     brew bundle
 
     # Making bash 4 default shell
-    sudo python -c 'if not "/usr/local/bin/zsh" in open("/etc/shells").read(): open("/etc/shells", "a").write("/usr/local/bin/zsh\n")'
+    grep -q '/usr/local/bin/bash' /etc/shells || echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
     chsh -s /usr/local/bin/bash
 
     # Installing RVM, ruby 2.2 and gems
-    curl -L get.rvm.io | bash -s stable
+    if [ ! -f $HOME/.rvm/scripts/rvm ]; then
+      gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+      curl -L get.rvm.io | bash -s stable
+    fi
+    source $HOME/.rvm/scripts/rvm
     rvm install 2.2
     gem install sass
     gem install iStats
 
     # App Store Applications installation
 
-    apps = ("497799835" "948415170" "409183694" "890031187" "409201541" "557168941" "937984704" "409203825")
+    apps=("497799835" "948415170" "409183694" "890031187" "409201541" "557168941" "937984704" "409203825")
 
     for app in "${apps[@]}"; do
         if [[ $(mas list | grep "$app") ]]; then
@@ -43,10 +47,14 @@ if [[ "`uname`" == "Darwin" ]]; then
 
     # installing node modules
 
-    modules = ("bower" "babel-cli" "nodemon" "yo" "gulp" "jade" "express-generator")
+    modules=("bower" "babel-cli" "nodemon" "yo" "gulp" "jade" "express-generator")
 
     for module in "${modules[@]}"; do
+      if [[ $(npm list -g | grep "$module") ]]; then
+        echo "Module $module already installed"
+      else
         npm install -g "$module"
+      fi
     done
 
     printf $BLUE "Copying dotfiles"
@@ -55,14 +63,14 @@ if [[ "`uname`" == "Darwin" ]]; then
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-    	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "README.md" --exclude "Brewfile" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
+    	rsync --exclude ".git/" --exclude "apps.md"  --exclude ".DS_Store" --exclude "setup.sh" --exclude "README.md" --exclude "Brewfile" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
     fi
 else
     # Copy dotfiles to home directory
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rsync --exclude ".git/" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
+        rsync --exclude ".git/" --exclude "apps.md" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
     fi
 fi
 
