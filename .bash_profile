@@ -26,6 +26,4 @@ if [[ "`uname`" == "Darwin" ]]; then
     fi;
 
     source $(brew --prefix)/etc/profile.d/z.sh
-
-    alias subl="reattach-to-user-namespace subl"
 fi
