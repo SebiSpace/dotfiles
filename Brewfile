@@ -61,6 +61,7 @@ cask 'kid3'
 cask 'teamspeak-client'
 cask 'grandperspective'
 cask 'libreoffice'
+cask 'adobe-photoshop-cc'
 
 # fonts
 cask 'font-source-code-pro'
