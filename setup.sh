@@ -30,12 +30,19 @@ if [[ "`uname`" == "Darwin" ]]; then
     fi
     source $HOME/.rvm/scripts/rvm
     rvm install 2.2
-    gem install sass
-    gem install iStats
+
+    gems=("sass" "iStats")
+    for gem in "${gems[@]}"; do
+      if [[ $(gem list | grep "$gem") ]]; then
+        echo "$gem already installed"
+      else
+        gem install "$gem"
+      fi
+    done
 
     # App Store Applications installation
 
-    apps=("497799835" "948415170" "409183694" "890031187" "409201541" "557168941" "937984704" "409203825")
+    apps=("497799835" "409183694" "890031187" "409201541" "557168941" "937984704" "409203825")
 
     for app in "${apps[@]}"; do
         if [[ $(mas list | grep "$app") ]]; then
