@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/versions'
 tap 'caskroom/versions'
+tap 'caskroom/fonts'
 
 brew 'coreutils'
 brew 'findutils'
@@ -29,6 +30,8 @@ brew 'argon/mas/mas'
 brew 'screenfetch'
 brew 'wakeonlan'
 brew 'thefuck'
+brew 'mongodb'
+brew 'speedtest_cli'
 
 cask 'google-chrome-canary'
 cask 'iterm2-beta'
@@ -57,3 +60,7 @@ cask 'postman'
 cask 'kid3'
 cask 'teamspeak-client'
 cask 'grandperspective'
+cask 'libreoffice'
+
+# fonts
+cask 'font-source-code-pro'
