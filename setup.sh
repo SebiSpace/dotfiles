@@ -45,7 +45,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     # Installing Ruby gems
     printf "\n$BLUE" "Installing Ruby gems"
 
-    gems=("sass" "iStats")
+    gems=("sass" "iStats" "lunchy")
     for gem in "${gems[@]}"; do
       if [[ $(gem list | grep "$gem") ]]; then
         echo "$gem already installed"
