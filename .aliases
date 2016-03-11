@@ -13,6 +13,7 @@ alias c="clear"
 alias claer="clear" # cause i'm dumb
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" -x --audio-format mp3 --audio-quality 320K'
+alias lockscreen='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
