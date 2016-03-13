@@ -47,16 +47,16 @@ update_all() {
 		printf $BLUE "Updating system"
 		sudo softwareupdate -i -a
 
-		printf $BLUE "\nUpdating Mac App Store Applications"
+		printf "\n$BLUE" "Updating Mac App Store Applications"
 		mas upgrade
 
-		printf $BLUE "\nUpdating brew"
+		printf "\n$BLUE" "Updating brew"
 		brew update
 		brew upgrade
 		brew cleanup
 		brew cask cleanup
 
-		printf $BLUE "\nUpdating npm"
+		printf "\n$BLUE" "Updating npm"
 		npm install -g npm
 		npm update -g
 	else
