@@ -63,5 +63,9 @@ cask 'grandperspective'
 cask 'libreoffice'
 cask 'adobe-photoshop-cc'
 
+# games
+cask 'minecraft'
+cask 'feed-the-beast'
+
 # fonts
 cask 'font-source-code-pro'
