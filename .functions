@@ -42,7 +42,7 @@ fs() {
 	fi;
 }
 
-update_all() {
+update() {
 	if [[ "`uname`" == "Darwin" ]]; then
 		printf $BLUE "Updating system"
 		sudo softwareupdate -i -a
@@ -53,8 +53,8 @@ update_all() {
 		printf "\n$BLUE" "Updating brew"
 		brew update
 		brew upgrade
-		brew cleanup
-		brew cask cleanup
+		brew cleanup --force -prune=0 -s
+		brew cask cleanup --force
 
 		printf "\n$BLUE" "Updating npm"
 		npm install -g npm
