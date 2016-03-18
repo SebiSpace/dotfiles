@@ -72,8 +72,10 @@ if [[ "`uname`" == "Darwin" ]]; then
 
     modules=("bower" "babel-cli" "nodemon" "yo" "gulp" "jade" "express-generator")
 
+    installed="`npm list -g`"
+
     for module in "${modules[@]}"; do
-      if [[ $(npm list -g | grep "$module") ]]; then
+      if [[ $(echo "$installed" | grep "$module") ]]; then
         echo "Module $module already installed"
       else
         npm install -g "$module"
