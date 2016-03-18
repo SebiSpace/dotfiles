@@ -53,7 +53,7 @@ update() {
 		printf "\n$BLUE" "Updating brew"
 		brew update
 		brew upgrade
-		brew cleanup --force -prune=0 -s
+		brew cleanup --force --prune=0 -s
 		brew cask cleanup --force
 
 		printf "\n$BLUE" "Updating npm"
