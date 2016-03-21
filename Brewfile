@@ -62,6 +62,8 @@ cask 'teamspeak-client'
 cask 'grandperspective'
 cask 'libreoffice'
 cask 'adobe-photoshop-cc'
+cask 'utorrent'
+cask 'android-file-transfer'
 
 # games
 cask 'minecraft'
