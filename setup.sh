@@ -8,7 +8,6 @@ if [[ "`uname`" == "Darwin" ]]; then
 
     # Installing command line tools
     xcode-select --install
-    read -p "Press Enter when either the command line tools or Xcode are installed"
     # Making shure that the command line tools or Xcode are installed
     command -v clang >/dev/null 2>&1 || { echo "Command line tools aren't installed"; exit 1; }
 
