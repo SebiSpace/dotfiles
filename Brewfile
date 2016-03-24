@@ -34,7 +34,6 @@ brew 'thefuck'
 brew 'mongodb'
 brew 'speedtest_cli'
 brew 'whatmask'
-brew 'mtr'
 brew 'gnupg'
 brew 'carthage'
 
