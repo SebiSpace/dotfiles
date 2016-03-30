@@ -36,6 +36,8 @@ brew 'speedtest_cli'
 brew 'whatmask'
 brew 'gnupg'
 brew 'carthage'
+brew 'rust'
+brew 'doctl'
 
 cask 'google-chrome-canary'
 cask 'iterm2-beta'
