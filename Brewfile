@@ -74,6 +74,7 @@ cask 'adobe-illustrator-cc'
 cask 'transmission'
 cask 'android-file-transfer'
 cask 'vlc'
+cask 'scroll-reverser'
 
 # games
 cask 'minecraft'
