@@ -44,6 +44,7 @@ brew 'wine'
 brew 'xmlstarlet'
 brew 'jing'
 brew 'trang'
+brew 'stormssh'
 brew 'imagemagick'
 
 cask 'google-chrome-canary'
