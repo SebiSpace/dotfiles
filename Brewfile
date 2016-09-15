@@ -43,6 +43,7 @@ brew 'stormssh'
 brew 'imagemagick'
 brew 'tmux'
 
+cask 'google-chrome'
 cask 'google-chrome-canary'
 cask 'iterm2-beta'
 cask 'appcleaner'
