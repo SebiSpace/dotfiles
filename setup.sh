@@ -69,7 +69,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     # installing node modules
     printf "\n$BLUE" "Installing global node modules"
 
-    modules=("bower" "babel-cli" "nodemon" "yo" "gulp" "jade" "express-generator")
+    modules=("bower" "babel-cli" "nodemon" "yo" "gulp" "pug" "express-generator")
 
     installed="`npm list -g`"
 
