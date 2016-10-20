@@ -3,7 +3,6 @@ cask_args appdir: '/Applications'
 tap 'homebrew/versions'
 tap 'caskroom/versions'
 tap 'caskroom/fonts'
-tap 'argon/mas'
 tap 'jlhonora/lsusb'
 
 brew 'coreutils'
@@ -86,3 +85,12 @@ cask 'minecraft'
 
 # fonts
 cask 'font-source-code-pro'
+
+mas 'Tweetbot', id: 557168941
+mas 'Marked 2', id: 890031187
+mas 'Amphetamine', id: 937984704
+mas 'Xcode', id: 497799835
+mas 'Pages', id: 409201541
+mas 'Keynote', id: 409183694
+mas 'Solitaire', id: 515113678
+mas 'Numbers', id: 409203825

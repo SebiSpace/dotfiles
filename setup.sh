@@ -53,19 +53,6 @@ if [[ "`uname`" == "Darwin" ]]; then
       fi
     done
 
-    # App Store Applications installation
-    printf "\n$BLUE" "Installing Mac App Store applications"
-
-    apps=("497799835" "409183694" "890031187" "409201541" "557168941" "937984704" "409203825")
-
-    for app in "${apps[@]}"; do
-        if [[ $(mas list | grep "$app") ]]; then
-		    echo "App $app already installed"
-    	else
-    		mas install "$app"
-    	fi
-    done
-
     # installing node modules
     printf "\n$BLUE" "Installing global node modules"
 
