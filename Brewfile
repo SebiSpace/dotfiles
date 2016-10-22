@@ -77,6 +77,7 @@ cask 'android-file-transfer'
 cask 'vlc'
 cask 'scroll-reverser'
 cask 'xquartz'
+cask 'brackets'
 cask 'basex'
 cask 'openemu'
 
