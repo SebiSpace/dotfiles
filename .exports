@@ -9,4 +9,9 @@ export LC_ALL='en_US.UTF-8';
 export GREP_OPTIONS='--color=auto';
 
 # Add ~/bin to Path for custom code
-export PATH=$PATH:~/bin:$HOME/.rvm/bin
+# Add ~/.rvm/bin for ruby code
+# Add /usr/local/sbin for brew
+export PATH=$PATH:~/bin:$HOME/.rvm/bin:/usr/local/sbin
+
+# Homebrew Cask installation path
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
