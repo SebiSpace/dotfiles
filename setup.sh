@@ -81,7 +81,7 @@ else
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1 -r;
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rsync --exclude ".git/" --exclude "apps.md" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" --exclude ".osx" --exclude "Gruvbox.itermcolors" -avh --no-perms . ~;
+        rsync --exclude ".git/" --exclude "apps.md" --exclude ".DS_Store" --exclude "setup.sh" --exclude "Brewfile" --exclude "README.md" --exclude ".hushlogin" --exclude ".tmux-osx.conf" --exclude ".osx" --exclude "Gruvbox.itermcolors" --exclude "com.googlecode.iterm2.plist" -avh --no-perms . ~;
     fi
 fi
 
