@@ -54,7 +54,7 @@ update() {
 		brew update
 		brew upgrade
 		brew cleanup --force --prune=0 -s
-		brew cask cleanup --force
+		brew cask cleanup
 		brew prune
 
 		printf "\n$BLUE" "Updating npm"
