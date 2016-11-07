@@ -40,6 +40,7 @@ brew 'stormssh'
 brew 'imagemagick'
 brew 'tmux'
 brew 'ranger'
+brew 'yarn'
 
 cask 'google-chrome'
 cask 'google-chrome-canary'
