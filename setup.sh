@@ -24,6 +24,9 @@ if [[ "`uname`" == "Darwin" ]]; then
     grep -q '/usr/local/bin/bash' /etc/shells || echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
     chsh -s /usr/local/bin/bash
 
+    # Install rust
+    command -v rustup >/dev/null 2>&1 || { curl https://sh.rustup.rs -sSf > rustup.sh; chmod +x rustup.sh; ./rustup.sh -y; rm rustup.sh; }
+
     # Installing RVM, ruby 2.2 and gems
     if [ ! -f $HOME/.rvm/scripts/rvm ]; then
       printf "\n$BLUE" "Installing RVM"
