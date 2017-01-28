@@ -60,6 +60,9 @@ update() {
 		printf "\n$BLUE" "Updating npm"
 		npm install -g npm
 		npm update -g
+
+        printf "\n$BLUE" "Updating rust"
+        rustup update
 	else
 		printf $BLUE "Update script only available on OS X"
 	fi
