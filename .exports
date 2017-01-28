@@ -16,6 +16,8 @@ export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:/usr/local/sbin
 # Add ~/.yarn/bin for yarn globals
 export PATH=$PATH:$HOME/.yarn/bin
+# Add rustup
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Homebrew Cask installation path
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
