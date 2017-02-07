@@ -37,6 +37,7 @@ brew 'lsusb'
 brew 'stormssh'
 brew 'imagemagick'
 brew 'yarn'
+brew 'go'
 
 cask 'google-chrome'
 cask 'google-chrome-canary'
