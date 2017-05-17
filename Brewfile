@@ -79,6 +79,8 @@ cask 'dropbox'
 cask 'franz'
 cask 'dash'
 cask 'adobe-creative-cloud'
+cask 'discord'
+cask 'slack'
 
 # fonts
 cask 'font-source-code-pro'
