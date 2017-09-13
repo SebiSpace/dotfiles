@@ -56,3 +56,6 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
 
 # Hide Desktop Icons
 defaults write com.apple.finder CreateDesktop -bool false
+
+# Change location of screenshots
+defaults write com.apple.screencapture location ~/Dropbox/screenshots/
