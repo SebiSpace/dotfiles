@@ -26,6 +26,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     fi;
 
     source $(brew --prefix)/etc/profile.d/z.sh
+
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
     LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras

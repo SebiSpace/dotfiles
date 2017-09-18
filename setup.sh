@@ -25,12 +25,12 @@ if [[ "`uname`" == "Darwin" ]]; then
     chsh -s /usr/local/bin/bash
 
     # Make directory for go
-    mkdir ~/.go
+    mkdir ~/.go 2>/dev/null
 
     # Install rust
     command -v rustup >/dev/null 2>&1 || { curl https://sh.rustup.rs -sSf > rustup.sh; chmod +x rustup.sh; ./rustup.sh -y; rm rustup.sh; }
 
-    # Installing RVM, ruby 2.2 and gems
+    # Installing RVM, ruby and gems
     if [ ! -f $HOME/.rvm/scripts/rvm ]; then
       printf "\n$BLUE" "Installing RVM"
       gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -43,16 +43,19 @@ if [[ "`uname`" == "Darwin" ]]; then
     source $HOME/.rvm/scripts/rvm
 
     # Installing Ruby 2.2
-    printf "\n$BLUE" "Installing Ruby 2.2"
+    printf "\n$BLUE" "Installing latest Ruby"
 
-    rvm install 2.2
+    rvm install ruby-head
 
     # Installing Ruby gems
     printf "\n$BLUE" "Installing Ruby gems"
 
     gems=("sass" "iStats" "lunchy")
+
+    installed="`gem list`"
+
     for gem in "${gems[@]}"; do
-      if [[ $(gem list | grep "$gem") ]]; then
+      if [[ $(echo "$installed" | grep "$gem") ]]; then
         echo "$gem already installed"
       else
         gem install "$gem"
@@ -62,7 +65,7 @@ if [[ "`uname`" == "Darwin" ]]; then
     # installing node modules
     printf "\n$BLUE" "Installing global node modules"
 
-    modules=("bower" "babel-cli" "nodemon" "yo" "gulp-cli" "pug" "generator-express" "fkill-cli" "generator-webapp")
+    modules=("bower" "babel-cli" "nodemon" "yo" "gulp-cli" "pug" "generator-express" "fkill-cli" "generator-webapp" "fast-cli")
 
     installed="`npm list -g`"
 
