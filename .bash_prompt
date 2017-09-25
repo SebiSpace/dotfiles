@@ -21,4 +21,4 @@ BPurple='\e[1;35m'      # Purple
 BCyan='\e[1;36m'        # Cyan
 BWhite='\e[1;37m'       # White
 
-export PS1="\[${BRed}\]\u \[${BWhite}\]at \[${BGreen}\]\h \[${BWhite}\]in \[${BBlue}\]\w\n\[${BWhite}\]$ \[${reset}\]";
+export PS1="\[${Red}\]\u \[${White}\]at \[${Green}\]\h \[${White}\]in \[${Blue}\]\w\n\[${White}\]$ \[${reset}\]";
