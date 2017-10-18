@@ -1,0 +1,34 @@
+export DOTFILES=$HOME/.dotfiles
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
+
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar histappend; do
+    shopt -s "$option" 2> /dev/null;
+done;
+
+# source all bash config files
+for config in $DOTFILES/bash/**/*.bash; do
+    source $config;
+done;
+
+
+if [[ "`uname`" == "Darwin" ]]; then
+
+    if [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+        source "$(brew --prefix)/share/bash-completion/bash_completion";
+
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion;
+    fi;
+
+    source $(brew --prefix)/etc/profile.d/z.sh
+
+fi
+
+if [[ -a ~/.localrc ]]; then
+    source ~/.localrc
+fi
