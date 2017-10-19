@@ -40,6 +40,7 @@ brew 'gnupg'
 brew 'lsusb'
 brew 'imagemagick'
 brew 'neovim'
+brew 'tmux'
 
 cask 'sublime-text'
 cask 'google-chrome'
