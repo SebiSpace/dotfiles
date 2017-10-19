@@ -8,7 +8,7 @@ printf "\n$BLUE" "Installing dotfiles"
 if [ "$(uname)" == "Darwin" ]; then
     printf "\n$BLUE" "Running on OSX"
 
-    source install/osx.sh
+    source install/mac.sh
 fi
 
 source install/link.sh
