@@ -18,7 +18,7 @@ cdf() { # short for `cdfinder`
 update() {
     case "`uname`" in
     Darwin )
-        printf $BLUE "Updating system"
+        printf "$BLUE" "Updating system"
         sudo softwareupdate -i -a || exit
 
         printf "\n$BLUE" "Updating Mac App Store Applications"
