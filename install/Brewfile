@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/versions'
 tap 'caskroom/versions'
 tap 'caskroom/fonts'
+tap 'jlhonora/lsusb'
 
 brew 'bash'
 brew 'bash-completion2'
