@@ -66,6 +66,7 @@ cask 'franz'
 cask 'adobe-creative-cloud'
 cask 'discord'
 cask 'slack'
+cask 'etcher'
 
 # fonts
 cask 'font-source-code-pro'
