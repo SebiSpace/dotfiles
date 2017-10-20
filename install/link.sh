@@ -4,7 +4,7 @@ BLUE="\e[1;34m%-6s\e[m\n"
 
 DOTFILES=$HOME/.dotfiles
 
-printf "\n$BLUE" "Creating symlinks"]
+printf "\n$BLUE" "Creating symlinks"
 
 linkables=$( find -H "$DOTFILES" -name '*.symlink' )
 
