@@ -5,13 +5,13 @@ BLUE="\e[1;34m%-6s\e[m\n"
 printf "\n$BLUE" "Installing command line tools"
 xcode-select --install
 
-Making shure that the command line tools or Xcode are installed
+# Making shure that the command line tools or Xcode are installed
 command -v clang >/dev/null 2>&1 || { echo "Command line tools aren't installed"; exit 1; }
 
 printf "\n$BLUE" "Installing homebrew"
 command -v brew >/dev/null 2>&1 || { ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
-brew bundle
+brew bundle --file=$HOME/.dotfiles/install/Brewfile
 
 # Making bash 4 default shell
 printf "\n$BLUE" "Changing shell to bash for user $USER"
