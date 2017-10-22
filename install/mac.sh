@@ -2,6 +2,14 @@
 
 BLUE="\e[1;34m%-6s\e[m\n"
 
+printf "\n$BLUE" "Enter your computer name: "
+read cpname
+
+sudo scutil --set ComputerName "$cpname"
+sudo scutil --set HostName "$cpname"
+sudo scutil --set LocalHostName "$cpname"
+defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$cpname"
+
 printf "\n$BLUE" "Installing command line tools"
 xcode-select --install
 
