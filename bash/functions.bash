@@ -28,6 +28,7 @@ update() {
         brew update
         brew upgrade
         brew cleanup --force --prune=0 -s
+        brew cu -fay
         brew cask cleanup
         brew prune
 

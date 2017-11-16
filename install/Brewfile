@@ -4,6 +4,7 @@ tap 'homebrew/versions'
 tap 'caskroom/versions'
 tap 'caskroom/fonts'
 tap 'jlhonora/lsusb'
+tap 'buo/cask-upgrade'
 
 brew 'bash'
 brew 'bash-completion2'
