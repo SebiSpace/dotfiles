@@ -15,6 +15,11 @@ source install/link.sh
 
 source install/git.sh
 
-printf "\n$BLUE" "Installing rust"
-# Install rust
-command -v rustup >/dev/null 2>&1 || { curl https://sh.rustup.rs -sSf > rustup.sh; chmod +x rustup.sh; ./rustup.sh -y; rm rustup.sh; }
+while true; do
+    read -p "Install rust?" yn
+    case $yn in
+        [Yy]* ) printf "\n$BLUE" "Installing rust"; command -v rustup >/dev/null 2>&1 || { curl https://sh.rustup.rs -sSf > rustup.sh; chmod +x rustup.sh; ./rustup.sh -y; rm rustup.sh; }; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
