@@ -27,6 +27,7 @@ Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
+Plug 'mattn/emmet-vim'
 
 " html / templates
 Plug 'othree/html5.vim', { 'for': 'html' } " html5 support
