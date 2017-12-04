@@ -68,6 +68,8 @@ set hlsearch                " highlight search results
 set incsearch               " set incremental search, like modern browsers
 set nolazyredraw            " don't redraw while executing macros
 
+set wildignorecase          " case insensitive file opening
+
 set magic                   " Set magic on, for regex
 
 set showmatch               " show matching braces
